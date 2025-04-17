@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="S.K.">
+    <meta name="licensed" content="MIT">
+
+    <title>About "zernpy"</title>
+    
+    <!-- Favicon specification from the local file -->
+    <link rel="icon" href="favicon_zernpy.ico" type="image/x-icon">
+
+    <!-- Load script for handle page appearance and provide some interactivity -->
+    <script src="./about_page.js"></script>
+
+    <!-- Load external overall applicable stylesheets -->
+    <link rel="stylesheet" href="index_about_styling.css">
+
+    <!-- Page specific CSS styling -->
+    <style>
+        /* Define another background color for this page */
+        .navbar{
+            background-color: beige; 
+        }
+        /* Specifics for main content of the page */
+        .mainBody{
+            background-color: whitesmoke;  
+        }
+        .textLine{
+            padding: 6px; text-align: center;
+        }   
+
+        /* Setting images in the pyramidal order */
+        .imagesContainer{
+            position: relative;   /* Makes the child to select position relative to it */ 
+            width: inherit; height: fit-content;
+            font-size: 0;  /* This setting removes additional whitespaces between images in this container */ 
+        }
+        .DisplayZernikeName{
+            font-size: 16px; text-align: center; font-weight: bold; font-style: italic;
+        }
+        .ZernProfile{
+            width: 100px; height: 100px; display: inline-block;
+            position: absolute; /* Seems in this case it's necessary for avoiding relative shifts for top, left coordinates in script below */
+            padding: 0; margin: 0;  /* Padding = 0 and margins = 0 removes additional white spaces between inline blocks */
+        }
+
+        /* Styling of the list with next steps */
+        #nextStepsList{
+            text-align: center; list-style-position: inside;
+        }
+        .bulletPoint{
+            margin-bottom: 8px; margin-right: 6px;
+            padding-right: 12px; padding-left: 4px; 
+        }
+        #page_footer{
+            font-size: 0.9em; font-family: 'Courier New', Courier, monospace; padding-top: 2em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="flexboxContainer">
+
+        <!-- Navigation panel, some elements and inspiration get from W3 Schools, better use <nav> element  -->
+        <nav class="navbar">
+            <a class="link navbarLink" href="index.html"> Main </a>
+            <a class="link navbarLink" href="./api/index.html"> API Dictionary </a>
+            <a class="link navbarLink" href="about.html"> About </a>
+        </nav>
+
+        <!-- Main text body -->
+        <main class="mainBody">
+            <p>
+                <h4 class="header"> Reasons for developing </h4> 
+                <ul>
+                    <li class="bulletPoint">
+                        This library was developed because I struggled to find open and fast enough implementation of simple function for Zernike polynomial
+                        calculation.
+                    </li>
+                    <li class="bulletPoint">
+                        Moreover, the exact equation for calculation isn't difficult to code in Python, but the exact equation gets really slow for
+                        high order polynomials. To overcome that, the recursive equations are implemented in this package instead of the exact ones.  
+                    </li>
+                    <li class="bulletPoint">
+                        However, anyway, there are exist many specifically implemented and well acknowledged libraries included Zernike polynomials calculation,
+                        for example: <a class="link" href="https://github.com/jacopoantonello/zernike" target="_blank">zernike</a> and 
+                        <!-- Security addition for demo in "rel" attribute, because it's the external website   -->
+                        <a class="link" href="https://docs.hcipy.org/dev/api/hcipy.mode_basis.zernike.html" rel="noopener noreferrer" target="_blank">HCIpy</a>. <br>
+                        Recently, I've found the solid library for numerical methods for Diffractive Optics, that also has the Zernike polynomials implementation:
+                        <a class="link" href="https://pyoptica.gitlab.io/pyoptica/api.html#module-pyoptica.zernikes" rel="noopener noreferrer" target="_blank">PyOptica</a>
+                    </li>
+                </ul>
+            </p>
+
+            <p>
+                <h4 class="header" id="RepresentingZernikeStr"> Representing a few Zernike profiles in a pyramid </h4>
+                <div class="textLine"> 
+                    The following images generated using the static method plot_sum_zernikes_on_fig() for single element in a list as polynomials list.
+                </div>
+                <div class="imagesContainer">
+                    <div class="DisplayZernikeName"> Hover mouse over the images (right) for getting polynomial name </div>
+                    <img class="ZernProfile" src="./images/ZernOsa1.png" id="ZernOsa1">
+                    <img class="ZernProfile" src="./images/ZernOsa2.png" id="ZernOsa2">
+                    <img class="ZernProfile" src="./images/ZernOsa3.png" id="ZernOsa3">
+                    <img class="ZernProfile" src="./images/ZernOsa4.png" id="ZernOsa4">
+                    <img class="ZernProfile" src="./images/ZernOsa5.png" id="ZernOsa5">
+                    <img class="ZernProfile" src="./images/ZernOsa6.png" id="ZernOsa6">
+                    <img class="ZernProfile" src="./images/ZernOsa7.png" id="ZernOsa7">
+                    <img class="ZernProfile" src="./images/ZernOsa8.png" id="ZernOsa8">
+                    <img class="ZernProfile" src="./images/ZernOsa9.png" id="ZernOsa9">
+                </div>
+            </p>
+
+            <p>
+                <h4 class="header"> Next steps </h4> 
+                <ol id="nextStepsList">
+                    <li class="bulletPoint"> <del> Implement calculation of derivatives</del>  Done in version 0.0.5 of the library </li>
+                    <li class="bulletPoint"> <del> Implement conversion from raw deformations on an unit pupil to set of Zernike polynomials</del>  Done in ver. 0.0.6 </li>
+                    <li class="bulletPoint"> Implement more interactivity for these pages, make responsive the main page </li>
+                    <li class="bulletPoint"> <del> Provide more tests for checking derivatives, values and initialization of polynomials </del> There are 10 tests for run by the <em> pytest </em> library </li>
+                    <li class="bulletPoint"> Fixed issue with slow calculations of high orders polynomials, found that direct (exact) equation is sufficiently fast - ver. 0.0.8 </li>
+                    <li class="bulletPoint"> Found that the exact equation couldn't be used reliably for orders higher than 40th radial one - ver. 0.0.9 </li>
+                </ol>
+            </p>
+
+        <!-- Footer with some info -->
+        <footer id="page_footer"> 2022-2023 S.K., MIT licensed </footer>
+        </main>
+    </div>
+
+</body>
+</html>

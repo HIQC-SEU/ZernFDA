@@ -1,0 +1,15 @@
+torch
+torchvision
+matplotlib>=3.5.0,<=4.0.0
+mpmath>=1.0.0
+numpy>=1.20.0,<2.0.0
+nvgpu
+psutil
+pylatexenc>=2.0,<=3.0
+scipy>=1.7.0,<2.0.0
+termcolor
+colorama
+h5py
+tqdm
+jax[cuda12]==0.4.29
+jaxlib==0.4.29+cuda12.cudnn91
