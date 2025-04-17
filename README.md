@@ -46,11 +46,12 @@ python main_gpu.py
 
 # FPGA运行样例
 ﻿使用Vivado工具，进行bit文件烧写至KU060 FPGA，将HDMI连接至显示屏和FPGA，即可显示实时Zernike计算的测试图样
-﻿
+
+```
+
 ## 许可协议
 本项目采用**学术共享许可**：
 - FPGA实现部分受[NDA](docs/NDA.pdf)约束
 - CPU/GPU实现遵循[MIT License](LICENSE)
 
 **东南大学异构智能与量子计算实验室** © 2024
-``` 
