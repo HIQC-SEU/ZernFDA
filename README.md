@@ -1,5 +1,5 @@
 # ZernFDA
-This is open-source zernike polynomials acceleration work implemented on CPU, GPU, and FPGA. This project implements our latest research achievements in FPGA-accelerated Zernike polynomials computation, with a related paper submitted to **TCAS-II** (Under Review). We provide complete implementations from CPU/GPU to FPGA hardware acceleration.
+This is open-source zernike polynomials acceleration work implemented on CPU, GPU, and FPGA. This project implements our latest research achievements in FPGA-accelerated Zernike polynomials computation, with a related paper submitted to ** (Under Review). We provide complete implementations from CPU/GPU to FPGA hardware acceleration.
 
 ## Project Structure
 ```
